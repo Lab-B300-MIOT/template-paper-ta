@@ -1,0 +1,53 @@
+name: CI
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  compile:
+    name: Compile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compile document indo paper
+        uses: xu-cheng/latex-action@3.1.0
+        with:
+          root_file: paper-id.tex
+
+      - name: Compile document english paper
+        uses: xu-cheng/latex-action@3.1.0
+        with:
+          root_file: paper-en.tex
+
+      - name: Rename document
+        run: mkdir dist && mv paper-id.pdf dist/paper-ta-ina.pdf && mv paper-en.pdf dist/paper-ta-eng.pdf
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy
+    if: github.event_name != 'pull_request'
+    needs: compile
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - name: Configure Pages
+        uses: actions/configure-pages@v4
+
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
