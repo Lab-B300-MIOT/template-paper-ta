@@ -8,9 +8,9 @@ Repositori ini berisi template [LaTeX](https://www.latex-project.org/) dari buku
 
 > Contoh file PDF dari template ini bisa dilihat disini:
 >
-> - [Indonesia Version](https://lab-b300-miot.github.io/paper-drone/paper-ta-ina.pdf)
+> - [Indonesia Version](https://lab-b300-miot.github.io/template-paper-ta/paper-ta-ina.pdf)
 >
-> - [English Version](https://lab-b300-miot.github.io/paper-drone/paper-ta-eng.pdf)
+> - [English Version](https://lab-b300-miot.github.io/template-paper-drone/paper-ta-eng.pdf)
 
 ## Referensi
 
