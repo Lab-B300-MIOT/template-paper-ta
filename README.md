@@ -10,7 +10,7 @@ Repositori ini berisi template [LaTeX](https://www.latex-project.org/) dari buku
 >
 > - [Indonesia Version](https://lab-b300-miot.github.io/template-paper-ta/paper-ta-ina.pdf)
 >
-> - [English Version](https://lab-b300-miot.github.io/template-paper-drone/paper-ta-eng.pdf)
+> - [English Version](https://lab-b300-miot.github.io/template-paper-ta/paper-ta-eng.pdf)
 
 ## Referensi
 
